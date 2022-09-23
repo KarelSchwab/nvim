@@ -1,1 +1,2 @@
-print("Hello from karel schwab")
+require("karelschwab.plugins")
+
