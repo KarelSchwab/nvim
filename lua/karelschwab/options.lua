@@ -42,3 +42,5 @@ vim.opt.splitbelow = true
 vim.opt.completeopt = "menuone,noinsert,noselect"
 
 vim.opt.mouse = "a"
+
+vim.g.netrw_banner = 0
