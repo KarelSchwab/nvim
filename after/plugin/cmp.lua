@@ -62,16 +62,8 @@ local capabilities = require("cmp_nvim_lsp").update_capabilities(vim.lsp.protoco
 
 capabilities.textDocument.completion.completionItem.snippetSupport = true
 
-local on_att = function()
-    local map = vim.api.nvim_set_keymap
-    local opts = {noremap = true, silent = true}
+local on_att = function(client)
 
-    -- LSP Mappings
-    map("n", "K", "<cmd>lua vim.lsp.buf.hover()<CR>", opts)
-    map("n", "<leader>rn", "<cmd>lua vim.lsp.buf.rename()<CR>", opts)
-    map("n", "<leader>ca", "<cmd>lua vim.lsp.buf.code_action()<CR>", opts)
-    map("n", "<leader>]", "<cmd>lua vim.diagnostic.goto_next()<CR>", opts)
-    map("n", "<leader>[", "<cmd>lua vim.diagnostic.goto_next()<CR>", opts)
 end
 
 local lsp_list = {
