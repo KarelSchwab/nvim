@@ -2,16 +2,19 @@ require("packer").startup(
     function(use)
         -- Plugin manager
         use "wbthomason/packer.nvim"
+
         -- Gruvbox color scheme
-        --use {"ellisonleao/gruvbox.nvim"}
-	use {"gruvbox-community/gruvbox"}
+        use {"gruvbox-community/gruvbox"}
+
         -- Telescope
         use {
             "nvim-telescope/telescope.nvim",
             requires = {{"nvim-lua/plenary.nvim"}}
         }
+
         -- Telescope FZF plugin
         use {"nvim-telescope/telescope-fzf-native.nvim", run = "make"}
+
         -- Telescope icons
         use "kyazdani42/nvim-web-devicons"
 
@@ -20,10 +23,12 @@ require("packer").startup(
 
         -- LSP
         use "neovim/nvim-lspconfig"
-	use {
-	    'nvim-lualine/lualine.nvim',
-	    requires = { 'kyazdani42/nvim-web-devicons', opt = true }
-	}
+
+        -- Lualine
+        use {
+            "nvim-lualine/lualine.nvim",
+            requires = {"kyazdani42/nvim-web-devicons", opt = true}
+        }
 
         -- LuaSnip
         use "L3MON4D3/LuaSnip"
@@ -46,13 +51,8 @@ require("packer").startup(
         -- GitGutter
         use "airblade/vim-gitgutter"
 
-        -- Show indentation line
-        --use "lukas-reineke/indent-blankline.nvim"
-
         -- Harpoon (for extra coconut oil)
         use "ThePrimeagen/harpoon"
-
-        -- use "jiangmiao/auto-pairs"
 
         -- Vim-fugitive
         use "tpope/vim-fugitive"
@@ -60,9 +60,7 @@ require("packer").startup(
         -- Formatter
         use "mhartington/formatter.nvim"
 
-        -- Highlight current word under cursor
-        use "RRethy/vim-illuminate"
-
+        -- Java Language Server
         use "mfussenegger/nvim-jdtls"
 
         -- Dap
