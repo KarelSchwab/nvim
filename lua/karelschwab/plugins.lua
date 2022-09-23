@@ -60,9 +60,6 @@ require("packer").startup(
         -- Formatter
         use "mhartington/formatter.nvim"
 
-        -- Java Language Server
-        use "mfussenegger/nvim-jdtls"
-
         -- Dap
         use "mfussenegger/nvim-dap"
         use "mfussenegger/nvim-dap-python"
