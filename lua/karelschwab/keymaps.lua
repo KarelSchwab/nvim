@@ -39,3 +39,46 @@ map("n", "<M-C-h>", "<C-w>5<", opts)
 -- Move current line up or down
 map("n", "<A-k>", "<cmd>move -2<CR>", opts)
 map("n", "<A-j>", "<cmd>move +1<CR>", opts)
+
+-- LSP Mappings
+map("n", "K", "<cmd>lua vim.lsp.buf.hover()<CR>", opts)
+map("n", "<leader>rn", "<cmd>lua vim.lsp.buf.rename()<CR>", opts)
+map("n", "<leader>ca", "<cmd>lua vim.lsp.buf.code_action()<CR>", opts)
+map("n", "<leader>]", "<cmd>lua vim.diagnostic.goto_next()<CR>", opts)
+map("n", "<leader>[", "<cmd>lua vim.diagnostic.goto_next()<CR>", opts)
+
+-- Telescope Mappings
+map("n", "<leader>gf", ":Telescope git_files<CR>", opts)
+map("n", "<leader>ff", ":Telescope find_files<CR>", opts)
+map("n", "<leader>fb", ":Telescope file_browser<CR>", opts)
+map("n", "<leader>lg", ":Telescope live_grep<CR>", opts)
+map("n", "<leader>b", ":Telescope buffers<CR>", opts)
+map("n", "<leader>q", ":Telescope quickfix<CR>", opts)
+map("n", "<leader>d", ":Telescope diagnostics<CR>", opts)
+
+-- Telescope LSP Mappings
+map("n", "gd", ":Telescope lsp_definitions<CR>", opts)
+map("n", "gi", ":Telescope lsp_implementations<CR>", opts)
+map("n", "gr", ":Telescope lsp_references<CR>", opts)
+map("n", "gt", ":Telescope lsp_type_definitions<CR>", opts)
+map("n", "gs", ":Telescope lsp_document_symbols<CR>", opts)
+
+-- Harpoon Mappings
+map("n", "<leader>a", '<cmd>lua require("harpoon.mark").add_file()<CR>', opts)
+map("n", "<leader>hh", '<cmd>lua require("harpoon.ui").toggle_quick_menu()<CR>', opts)
+map("n", "<leader>1", '<cmd>lua require("harpoon.ui").nav_file(1)<CR>', opts)
+map("n", "<leader>2", '<cmd>lua require("harpoon.ui").nav_file(2)<CR>', opts)
+map("n", "<leader>3", '<cmd>lua require("harpoon.ui").nav_file(3)<CR>', opts)
+map("n", "<leader>4", '<cmd>lua require("harpoon.ui").nav_file(4)<CR>', opts)
+
+map("n", "<leader>tt", '<cmd>lua require("harpoon.term").gotoTerminal(1)<CR>', opts)
+map("n", "<leader>t2", '<cmd>lua require("harpoon.term").gotoTerminal(2)<CR>', opts)
+
+-- Debugging
+map("n", "<leader>b", ':lua require("dap").toggle_breakpoint()<CR>', opts)
+map("n", "<F5>", ':lua require("dap").continue()<CR>', opts)
+map("n", "<F1>", ':lua require("dap").step_into()<CR>', opts)
+map("n", "<F2>", ':lua require("dap").step_over()<CR>', opts)
+map("n", "<F3>", ':lua require("dap").step_out()<CR>', opts)
+
+map("n", "<F12>", ':lua require("dapui").toggle()<CR>', opts)
