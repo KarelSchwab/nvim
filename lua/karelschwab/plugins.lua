@@ -74,5 +74,8 @@ require("packer").startup(
             opt = true,
             run = "npm install --legacy-peer-deps && npm run compile"
         }
+
+        -- Lspsaga
+        use "glepnir/lspsaga.nvim"
     end
 )
