@@ -4,7 +4,7 @@ require("packer").startup(
         use "wbthomason/packer.nvim"
 
         -- Gruvbox color scheme
-        use {"gruvbox-community/gruvbox"}
+        use "gruvbox-community/gruvbox"
 
         -- Telescope
         use {
@@ -46,7 +46,7 @@ require("packer").startup(
         use {"tzachar/cmp-tabnine", run = "./install.sh", requires = "hrsh7th/nvim-cmp"}
 
         -- Comment
-        use {"numToStr/Comment.nvim"}
+        use "numToStr/Comment.nvim"
 
         -- GitGutter
         use "airblade/vim-gitgutter"
@@ -59,6 +59,9 @@ require("packer").startup(
 
         -- Formatter
         use "mhartington/formatter.nvim"
+
+        -- Blankline
+        use "lukas-reineke/indent-blankline.nvim"
 
         -- Dap
         use "mfussenegger/nvim-dap"
