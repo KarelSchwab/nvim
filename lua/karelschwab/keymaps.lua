@@ -40,12 +40,14 @@ map("n", "<M-C-h>", "<C-w>5<", opts)
 map("n", "<A-k>", "<cmd>move -2<CR>", opts)
 map("n", "<A-j>", "<cmd>move +1<CR>", opts)
 
--- LSP Mappings
-map("n", "K", "<cmd>lua vim.lsp.buf.hover()<CR>", opts)
-map("n", "<leader>rn", "<cmd>lua vim.lsp.buf.rename()<CR>", opts)
-map("n", "<leader>ca", "<cmd>lua vim.lsp.buf.code_action()<CR>", opts)
-map("n", "<leader>]", "<cmd>lua vim.diagnostic.goto_next()<CR>", opts)
-map("n", "<leader>[", "<cmd>lua vim.diagnostic.goto_next()<CR>", opts)
+-- Lspsaga Mappings
+map("n", "K", "<cmd>Lspsaga hover_doc<CR>", opts)
+map("n", "<leader>rn", "<cmd>Lspsaga rename<CR>", opts)
+map("n", "<leader>d", "<cmd>Lspsaga show_cursor_diagnostics<CR>", opts)
+map("n", "<leader>dl", "<cmd>Lspsaga show_line_diagnostics<CR>", opts)
+map("n", "<leader>ca", "<cmd>Lspsaga code_action<CR>", opts)
+map("n", "<leader>]", "<cmd>Lspsaga diagnostic_jump_next<CR>", opts)
+map("n", "<leader>[", "<cmd>Lspsaga diagnostic_jump_prev<CR>", opts)
 
 -- Telescope Mappings
 map("n", "<leader>gf", ":Telescope git_files<CR>", opts)
@@ -54,7 +56,6 @@ map("n", "<leader>fb", ":Telescope file_browser<CR>", opts)
 map("n", "<leader>lg", ":Telescope live_grep<CR>", opts)
 map("n", "<leader>b", ":Telescope buffers<CR>", opts)
 map("n", "<leader>q", ":Telescope quickfix<CR>", opts)
-map("n", "<leader>d", ":Telescope diagnostics<CR>", opts)
 
 -- Telescope LSP Mappings
 map("n", "gd", ":Telescope lsp_definitions<CR>", opts)
