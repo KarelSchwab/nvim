@@ -7,6 +7,7 @@
 - telescope-fzf-native - [https://github.com/nvim-telescope/telescope-fzf-native.nvim](https://github.com/nvim-telescope/telescope-fzf-native.nvim)
 - nvim-web-devicons - [https://github.com/kyazdani42/nvim-web-devicons](https://github.com/kyazdani42/nvim-web-devicons)
 - treesitter - [https://github.com/nvim-treesitter/nvim-treesitter](https://github.com/nvim-treesitter/nvim-treesitter)
+- treesitter-context - [https://github.com/nvim-treesitter/nvim-treesitter-context](https://github.com/nvim-treesitter/nvim-treesitter-context)
 - lspconfig - [https://github.com/neovim/nvim-lspconfig](https://github.com/neovim/nvim-lspconfig)
 - lualine - [https://github.com/nvim-lualine/lualine.nvim](https://github.com/nvim-lualine/lualine.nvim)
 - LuaSnip - [https://github.com/L3MON4D3/LuaSnip](https://github.com/L3MON4D3/LuaSnip)
