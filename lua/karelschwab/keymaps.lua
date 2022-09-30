@@ -82,4 +82,8 @@ map("n", "<F1>", ':lua require("dap").step_into()<CR>', opts)
 map("n", "<F2>", ':lua require("dap").step_over()<CR>', opts)
 map("n", "<F3>", ':lua require("dap").step_out()<CR>', opts)
 
+-- Dap
 map("n", "<F12>", ':lua require("dapui").toggle()<CR>', opts)
+
+-- Undotree
+map("n", "<F6>", ":UndotreeToggle<CR>", opts)
