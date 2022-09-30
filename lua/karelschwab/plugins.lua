@@ -20,7 +20,7 @@ require("packer").startup(
 
         -- Treesitter
         use {"nvim-treesitter/nvim-treesitter", run = ":TSUpdate"}
-        use 'nvim-treesitter/nvim-treesitter-context'
+        use "nvim-treesitter/nvim-treesitter-context"
 
         -- LSP
         use "neovim/nvim-lspconfig"
@@ -80,6 +80,16 @@ require("packer").startup(
         use "glepnir/lspsaga.nvim"
 
         -- Markdown preview
-        use({ "iamcco/markdown-preview.nvim", run = "cd app && npm install", setup = function() vim.g.mkdp_filetypes = { "markdown" } end, ft = { "markdown" }, })
+        use(
+            {"iamcco/markdown-preview.nvim", run = "cd app && npm install", setup = function()
+                    vim.g.mkdp_filetypes = {"markdown"}
+                end, ft = {"markdown"}}
+        )
+
+        -- undotree
+        use "mbbill/undotree"
+
+        -- Java Language Server
+        use "mfussenegger/nvim-jdtls"
     end
 )
