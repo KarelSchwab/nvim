@@ -23,7 +23,7 @@ local config = {
         "-configuration",
         home .. "/.local/bin/jdt-language-server/config_linux",
         "-data",
-        vim.fn.expand("~/.cache/jdtls-workspace") .. project_name
+        vim.fn.expand("~/.cache/jdtls-workspace_") .. project_name
     },
     capabilities = capabilities,
     root_dir = require("jdtls.setup").find_root({".git", "mvnw", "gradlew", "pom.xml"}),
