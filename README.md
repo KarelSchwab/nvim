@@ -25,14 +25,10 @@
 - vim-fugitive - [https://github.com/tpope/vim-fugitive](https://github.com/tpope/vim-fugitive)
 - formatter - [https://github.com/mhartington/formatter.nvim](https://github.com/mhartington/formatter.nvim)
 - indent-blankline - [https://github.com/lukas-reineke/indent-blankline.nvim](https://github.com/lukas-reineke/indent-blankline.nvim)
-- nvim-dap - [https://github.com/mfussenegger/nvim-dap](https://github.com/mfussenegger/nvim-dap)
-- nvim-dap-python - [https://github.com/mfussenegger/nvim-dap-python](https://github.com/mfussenegger/nvim-dap-python)
-- nvim-dap-ui - [https://github.com/rcarriga/nvim-dap-ui](https://github.com/rcarriga/nvim-dap-ui)
-- nvim-dap-virtual-text - [https://github.com/theHamsta/nvim-dap-virtual-text](https://github.com/theHamsta/nvim-dap-virtual-text)
-- nvim-dap-vscode-js - [https://github.com/mxsdev/nvim-dap-vscode-js](https://github.com/mxsdev/nvim-dap-vscode-js)
-- vscode-js-debug - [https://github.com/microsoft/vscode-js-debug](https://github.com/microsoft/vscode-js-debug)
-- lspsaga - [https://github.com/glepnir/lspsaga.nvim](https://github.com/glepnir/lspsaga.nvim)
+- lspkind - [https://github.com/onsails/lspkind.nvim](https://github.com/onsails/lspkind.nvim)
 - markdown-preview - [https://github.com/iamcco/markdown-preview.nvim](https://github.com/iamcco/markdown-preview.nvim)
+- undotree - [https://github.com/mbbill/undotree](https://github.com/mbbill/undotree)
+- nvim-jdtls - [https://github.com/mfussenegger/nvim-jdtls](https://github.com/mfussenegger/nvim-jdtls)
 
 <!-- sudo apt install python3 python3-pip xclip ripgrep -->
 

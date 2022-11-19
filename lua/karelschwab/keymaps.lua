@@ -1,4 +1,4 @@
-local map = vim.api.nvim_set_keymap
+local map = vim.keymap.set
 local opts = {noremap = true, silent = true}
 
 -- Exit insert mode
@@ -36,32 +36,31 @@ map("n", "<M-C-j>", "<C-w>5-", opts)
 map("n", "<M-C-l>", "<C-w>5>", opts)
 map("n", "<M-C-h>", "<C-w>5<", opts)
 
--- Move current line up or down
+-- Line movement Mappings
 map("n", "<A-k>", "<cmd>move -2<CR>", opts)
 map("n", "<A-j>", "<cmd>move +1<CR>", opts)
 
--- Lspsaga Mappings
-map("n", "K", "<cmd>Lspsaga hover_doc<CR>", opts)
-map("n", "<leader>rn", "<cmd>Lspsaga rename<CR>", opts)
-map("n", "<leader>d", "<cmd>Lspsaga show_cursor_diagnostics<CR>", opts)
-map("n", "<leader>dl", "<cmd>Lspsaga show_line_diagnostics<CR>", opts)
-map("n", "<leader>ca", "<cmd>Lspsaga code_action<CR>", opts)
-map("n", "<leader>]", "<cmd>Lspsaga diagnostic_jump_next<CR>", opts)
-map("n", "<leader>[", "<cmd>Lspsaga diagnostic_jump_prev<CR>", opts)
+-- LSP Mappings
+map("n", "K", vim.lsp.buf.hover, opts)
+map("n", "<leader>rn", vim.lsp.buf.rename, opts)
+map("n", "<leader>ca", vim.lsp.buf.code_action, opts)
+map("n", "gd", vim.lsp.buf.definition, opts)
+map("n", "gD", vim.lsp.buf.declaration, opts)
+map("n", "gi", vim.lsp.buf.implementation, opts)
+map("n", "gh", vim.lsp.buf.signature_help, opts)
+
+map("n", "<leader>d", vim.diagnostic.open_float, opts)
+map("n", "<leader>]", vim.diagnostic.goto_next, opts)
+map("n", "<leader>[", vim.diagnostic.goto_prev, opts)
 
 -- Telescope Mappings
 map("n", "<leader>gf", ":Telescope git_files<CR>", opts)
 map("n", "<leader>ff", ":Telescope find_files<CR>", opts)
-map("n", "<leader>fb", ":Telescope file_browser<CR>", opts)
 map("n", "<leader>lg", ":Telescope live_grep<CR>", opts)
-map("n", "<leader>b", ":Telescope buffers<CR>", opts)
 map("n", "<leader>q", ":Telescope quickfix<CR>", opts)
 
 -- Telescope LSP Mappings
-map("n", "gd", ":Telescope lsp_definitions<CR>", opts)
-map("n", "gi", ":Telescope lsp_implementations<CR>", opts)
 map("n", "gr", ":Telescope lsp_references<CR>", opts)
-map("n", "gt", ":Telescope lsp_type_definitions<CR>", opts)
 map("n", "gs", ":Telescope lsp_document_symbols<CR>", opts)
 
 -- Harpoon Mappings
@@ -74,16 +73,6 @@ map("n", "<leader>4", '<cmd>lua require("harpoon.ui").nav_file(4)<CR>', opts)
 
 map("n", "<leader>tt", '<cmd>lua require("harpoon.term").gotoTerminal(1)<CR>', opts)
 map("n", "<leader>t2", '<cmd>lua require("harpoon.term").gotoTerminal(2)<CR>', opts)
-
--- Debugging
-map("n", "<leader>b", ':lua require("dap").toggle_breakpoint()<CR>', opts)
-map("n", "<F5>", ':lua require("dap").continue()<CR>', opts)
-map("n", "<F1>", ':lua require("dap").step_into()<CR>', opts)
-map("n", "<F2>", ':lua require("dap").step_over()<CR>', opts)
-map("n", "<F3>", ':lua require("dap").step_out()<CR>', opts)
-
--- Dap
-map("n", "<F12>", ':lua require("dapui").toggle()<CR>', opts)
 
 -- Undotree
 map("n", "<F6>", ":UndotreeToggle<CR>", opts)

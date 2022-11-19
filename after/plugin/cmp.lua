@@ -1,4 +1,5 @@
 local cmp = require("cmp")
+local lspkind = require("lspkind")
 
 if cmp == nil then
     return
@@ -26,9 +27,21 @@ cmp.setup(
                 {name = "nvim_lsp"},
                 {name = "cmp_tabnine"},
                 {name = "luasnip"},
-                {name = "buffer"},
+                {name = "buffer"}
             }
-        )
+        ),
+        formatting = {
+            format = lspkind.cmp_format(
+                {
+                    mode = "symbol",
+                    maxwidth = 50, -- prevent the popup from showing more than provided characters (e.g 50 will not show more than 50 characters)
+                    ellipsis_char = "...",
+                    before = function(a, vim_item)
+                        return vim_item
+                    end
+                }
+            )
+        }
     }
 )
 
@@ -58,12 +71,12 @@ cmp.setup.cmdline(
 )
 
 -- Setup lspconfig.
-local capabilities = require("cmp_nvim_lsp").update_capabilities(vim.lsp.protocol.make_client_capabilities())
+-- local capabilities = require("cmp_nvim_lsp").update_capabilities(vim.lsp.protocol.make_client_capabilities())
+local capabilities = require("cmp_nvim_lsp").default_capabilities()
 
 capabilities.textDocument.completion.completionItem.snippetSupport = true
 
 local on_att = function(client)
-
 end
 
 local lsp_list = {
