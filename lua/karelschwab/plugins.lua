@@ -44,7 +44,10 @@ require("packer").startup(
         use "saadparwaiz1/cmp_luasnip"
 
         -- Tabnine
-        use {"tzachar/cmp-tabnine", run = "./install.sh", requires = "hrsh7th/nvim-cmp"}
+        -- use {"tzachar/cmp-tabnine", run = "./install.sh", requires = "hrsh7th/nvim-cmp"}
+
+        -- Copilot
+        use "github/copilot.vim"
 
         -- Comment
         use "numToStr/Comment.nvim"

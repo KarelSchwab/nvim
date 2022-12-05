@@ -24,6 +24,7 @@ cmp.setup(
         ),
         sources = cmp.config.sources(
             {
+                {name = "copilot"},
                 {name = "nvim_lsp"},
                 {name = "cmp_tabnine"},
                 {name = "luasnip"},
