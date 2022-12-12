@@ -29,6 +29,8 @@
 - markdown-preview - [https://github.com/iamcco/markdown-preview.nvim](https://github.com/iamcco/markdown-preview.nvim)
 - undotree - [https://github.com/mbbill/undotree](https://github.com/mbbill/undotree)
 - nvim-jdtls - [https://github.com/mfussenegger/nvim-jdtls](https://github.com/mfussenegger/nvim-jdtls)
+- mason.nvim - [https://github.com/williamboman/mason.nvim](https://github.com/williamboman/mason.nvim)
+- mason-lspconfig.nvim - [https://github.com/williamboman/mason-lspconfig.nvim](https://github.com/williamboman/mason-lspconfig.nvim)
 
 <!-- sudo apt install python3 python3-pip xclip ripgrep -->
 
