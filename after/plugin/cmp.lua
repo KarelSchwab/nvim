@@ -1,6 +1,13 @@
 local cmp = require("cmp")
 local lspkind = require("lspkind")
 
+require("mason").setup()
+require("mason-lspconfig").setup(
+    {
+        automatic_installation = true
+    }
+)
+
 if cmp == nil then
     return
 end
@@ -24,9 +31,7 @@ cmp.setup(
         ),
         sources = cmp.config.sources(
             {
-                {name = "copilot"},
                 {name = "nvim_lsp"},
-                {name = "cmp_tabnine"},
                 {name = "luasnip"},
                 {name = "buffer"}
             }
@@ -37,7 +42,7 @@ cmp.setup(
                     mode = "symbol",
                     maxwidth = 50, -- prevent the popup from showing more than provided characters (e.g 50 will not show more than 50 characters)
                     ellipsis_char = "...",
-                    before = function(a, vim_item)
+                    before = function(_, vim_item)
                         return vim_item
                     end
                 }
@@ -77,7 +82,7 @@ local capabilities = require("cmp_nvim_lsp").default_capabilities()
 
 capabilities.textDocument.completion.completionItem.snippetSupport = true
 
-local on_att = function(client)
+local on_att = function(_) --client
 end
 
 local lsp_list = {
@@ -95,7 +100,9 @@ local lsp_list = {
     "jedi_language_server",
     "cssmodules_ls",
     "gopls",
-    "astro"
+    "astro",
+    "html",
+    "jdtls"
 }
 
 for _, lsp in pairs(lsp_list) do
@@ -136,9 +143,7 @@ require("lspconfig")["sumneko_lua"].setup {
         Lua = {
             runtime = {
                 -- Tell the language server which version of Lua you're using (most likely LuaJIT in the case of Neovim)
-                version = "LuaJIT",
-                -- Setup your lua path
-                path = runtime_path
+                version = "LuaJIT"
             },
             diagnostics = {
                 -- Get the language server to recognize the `vim` global
