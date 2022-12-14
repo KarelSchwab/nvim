@@ -44,11 +44,8 @@ require("packer").startup(
         use "saadparwaiz1/cmp_luasnip"
 
         -- Mason
-        use { "williamboman/mason.nvim" }
-        use { "williamboman/mason-lspconfig.nvim" }
-
-        -- Tabnine
-        -- use {"tzachar/cmp-tabnine", run = "./install.sh", requires = "hrsh7th/nvim-cmp"}
+        use {"williamboman/mason.nvim"}
+        use {"williamboman/mason-lspconfig.nvim"}
 
         -- Copilot
         use "github/copilot.vim"
