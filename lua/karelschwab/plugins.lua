@@ -84,5 +84,10 @@ require("packer").startup(
 
         -- undotree
         use "mbbill/undotree"
+
+        -- DAP
+        use "mfussenegger/nvim-dap"
+        use "rcarriga/nvim-dap-ui"
+        use "theHamsta/nvim-dap-virtual-text"
     end
 )

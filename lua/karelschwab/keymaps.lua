@@ -1,6 +1,12 @@
 local map = vim.keymap.set
 local opts = {noremap = true, silent = true}
 
+local telescope = require("telescope.builtin")
+
+local mark = require("harpoon.mark")
+local ui = require("harpoon.ui")
+local term = require("harpoon.term")
+
 -- Exit insert mode
 map("i", "jk", "<Esc>", opts)
 map("t", "jk", "<C-\\><C-n>", opts)
@@ -54,25 +60,27 @@ map("n", "<leader>]", vim.diagnostic.goto_next, opts)
 map("n", "<leader>[", vim.diagnostic.goto_prev, opts)
 
 -- Telescope Mappings
-map("n", "<leader>gf", ":Telescope git_files<CR>", opts)
-map("n", "<leader>ff", ":Telescope find_files<CR>", opts)
-map("n", "<leader>lg", ":Telescope live_grep<CR>", opts)
-map("n", "<leader>q", ":Telescope quickfix<CR>", opts)
+map("n", "<leader>gf", telescope.git_files, opts)
+map("n", "<leader>ff", telescope.find_files, opts)
+map("n", "<leader>lg", telescope.live_grep, opts)
+map("n", "<leader>q", telescope.quickfix, opts)
 
 -- Telescope LSP Mappings
-map("n", "gr", ":Telescope lsp_references<CR>", opts)
-map("n", "gs", ":Telescope lsp_document_symbols<CR>", opts)
+map("n", "gr", telescope.lsp_references, opts)
+map("n", "gs", telescope.lsp_document_symbols, opts)
 
 -- Harpoon Mappings
-map("n", "<leader>a", '<cmd>lua require("harpoon.mark").add_file()<CR>', opts)
-map("n", "<leader>hh", '<cmd>lua require("harpoon.ui").toggle_quick_menu()<CR>', opts)
-map("n", "<leader>1", '<cmd>lua require("harpoon.ui").nav_file(1)<CR>', opts)
-map("n", "<leader>2", '<cmd>lua require("harpoon.ui").nav_file(2)<CR>', opts)
-map("n", "<leader>3", '<cmd>lua require("harpoon.ui").nav_file(3)<CR>', opts)
-map("n", "<leader>4", '<cmd>lua require("harpoon.ui").nav_file(4)<CR>', opts)
+map("n", "<leader>a", mark.add_file, opts)
+map("n", "<leader>hh", ui.toggle_quick_menu, opts)
+map("n", "<leader>1", function() ui.nav_file(1) end, opts)
+map("n", "<leader>2", function() ui.nav_file(2) end, opts)
+map("n", "<leader>3", function() ui.nav_file(3) end, opts)
+map("n", "<leader>4", function() ui.nav_file(4) end, opts)
 
-map("n", "<leader>tt", '<cmd>lua require("harpoon.term").gotoTerminal(1)<CR>', opts)
-map("n", "<leader>t2", '<cmd>lua require("harpoon.term").gotoTerminal(2)<CR>', opts)
+map("n", "<leader>tt", function() term.gotoTerminal(1) end, opts)
+map("n", "<leader>t2", function() term.gotoTerminal(2) end, opts)
 
 -- Undotree
-map("n", "<F6>", ":UndotreeToggle<CR>", opts)
+map("n", "<F7>", vim.cmd.UndotreeToggle, opts)
+
+map("n", "<F1>", "", opts)
