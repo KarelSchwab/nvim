@@ -1,3 +1,3 @@
+require("karelschwab.plugins")
 require("karelschwab.options")
 require("karelschwab.keymaps")
-require("karelschwab.plugins")
