@@ -19,7 +19,6 @@ lsp.ensure_installed(
         "tailwindcss",
         "jedi_language_server",
         "cssmodules_ls",
-        "gopls",
         "astro",
         "html",
         "jdtls",
