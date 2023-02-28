@@ -22,7 +22,6 @@ lsp.ensure_installed(
         "astro",
         "html",
         "jdtls",
-        "sumneko_lua",
         "volar"
     }
 )
