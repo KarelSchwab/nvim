@@ -89,5 +89,7 @@ require("packer").startup(
         use "mfussenegger/nvim-dap"
         use "rcarriga/nvim-dap-ui"
         use "theHamsta/nvim-dap-virtual-text"
+
+        use "mfussenegger/nvim-dap-python"
     end
 )

@@ -7,6 +7,8 @@ local mark = require("harpoon.mark")
 local ui = require("harpoon.ui")
 local term = require("harpoon.term")
 
+local dap = require("dap")
+
 -- Exit insert mode
 map("i", "jk", "<Esc>", opts)
 map("t", "jk", "<C-\\><C-n>", opts)
@@ -83,4 +85,12 @@ map("n", "<leader>t2", function() term.gotoTerminal(2) end, opts)
 -- Undotree
 map("n", "<F7>", vim.cmd.UndotreeToggle, opts)
 
-map("n", "<F1>", "", opts)
+-- Nvim-dap
+map("n", "<leader>b", dap.toggle_breakpoint, opts)
+
+map("n", "<F5>", dap.continue, opts)
+map("n", "<F8>", dap.step_into, opts)
+map("n", "<F9>", dap.step_over, opts)
+map("n", "<F10>", dap.step_out, opts)
+
+map("n", "<F1>", "", opts) -- TODO: Remove 
