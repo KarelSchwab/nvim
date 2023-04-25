@@ -19,7 +19,6 @@ lsp.ensure_installed(
         "cssmodules_ls",
         "astro",
         "html",
-        "jdtls",
         "volar"
     }
 )
