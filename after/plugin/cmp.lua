@@ -32,6 +32,9 @@ lsp.setup_nvim_cmp(
         completion = {
             completeopt = "menu,menuone,noinsert,noselect"
         },
+        settings = {
+            offsetEncoding = "utf-8"
+        },
         sources = {
             {name = "nvim_lsp"},
             {name = "luasnip"},
