@@ -85,6 +85,9 @@ require("packer").startup(
         -- undotree
         use "mbbill/undotree"
 
+        -- Tmux
+        use "christoomey/vim-tmux-navigator"
+
         -- DAP
         use "mfussenegger/nvim-dap"
         use "rcarriga/nvim-dap-ui"
