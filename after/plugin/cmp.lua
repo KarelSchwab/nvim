@@ -32,7 +32,7 @@ lsp.setup_nvim_cmp(
             completeopt = "menu,menuone,noinsert,noselect"
         },
         settings = {
-            offsetEncoding = "utf-8"
+            offset_encoding = "utf-8"
         },
         sources = {
             {name = "nvim_lsp"},
