@@ -10,16 +10,9 @@ lsp.ensure_installed(
         "rust_analyzer",
         "tsserver",
         "bashls",
-        "cssls",
         "dockerls",
-        "emmet_ls",
         "jsonls",
-        "svelte",
-        "tailwindcss",
-        "cssmodules_ls",
-        "astro",
         "html",
-        "volar"
     }
 )
 
