@@ -1,14 +1,6 @@
 local map = vim.keymap.set
 local opts = {noremap = true, silent = true}
 
-local telescope = require("telescope.builtin")
-
-local mark = require("harpoon.mark")
-local ui = require("harpoon.ui")
-local term = require("harpoon.term")
-
-local dap = require("dap")
-
 -- Exit insert mode
 map("i", "jk", "<Esc>", opts)
 map("t", "jk", "<C-\\><C-n>", opts)
@@ -60,37 +52,3 @@ map("n", "gh", vim.lsp.buf.signature_help, opts)
 map("n", "<leader>d", vim.diagnostic.open_float, opts)
 map("n", "<leader>]", vim.diagnostic.goto_next, opts)
 map("n", "<leader>[", vim.diagnostic.goto_prev, opts)
-
--- Telescope Mappings
-map("n", "<leader>gf", telescope.git_files, opts)
-map("n", "<leader>ff", telescope.find_files, opts)
-map("n", "<leader>lg", telescope.live_grep, opts)
-map("n", "<leader>q", telescope.quickfix, opts)
-
--- Telescope LSP Mappings
-map("n", "gr", telescope.lsp_references, opts)
-map("n", "gs", telescope.lsp_document_symbols, opts)
-
--- Harpoon Mappings
-map("n", "<leader>a", mark.add_file, opts)
-map("n", "<leader>hh", ui.toggle_quick_menu, opts)
-map("n", "<leader>1", function() ui.nav_file(1) end, opts)
-map("n", "<leader>2", function() ui.nav_file(2) end, opts)
-map("n", "<leader>3", function() ui.nav_file(3) end, opts)
-map("n", "<leader>4", function() ui.nav_file(4) end, opts)
-
-map("n", "<leader>tt", function() term.gotoTerminal(1) end, opts)
-map("n", "<leader>t2", function() term.gotoTerminal(2) end, opts)
-
--- Undotree
-map("n", "<F7>", vim.cmd.UndotreeToggle, opts)
-
--- Nvim-dap
-map("n", "<leader>b", dap.toggle_breakpoint, opts)
-
-map("n", "<F5>", dap.continue, opts)
-map("n", "<F8>", dap.step_into, opts)
-map("n", "<F9>", dap.step_over, opts)
-map("n", "<F10>", dap.step_out, opts)
-
-map("n", "<F1>", "", opts) -- TODO: Remove 
