@@ -28,13 +28,7 @@ return {
         mason_lspconfig.setup({
             ensure_installed = {
                 "lua_ls",
-                "clangd",
-                "rust_analyzer",
-                "tsserver",
                 "bashls",
-                "dockerls",
-                "jsonls",
-                "html",
             },
             handlers = {
                 lsp_zero.default_setup,
