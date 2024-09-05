@@ -21,20 +21,9 @@ map("v", "<leader>P", '"+P', opts)
 map("n", "<A-l>", "<cmd>cnext<CR>", opts)
 map("n", "<A-h>", "<cmd>cprev<CR>", opts)
 
--- Easy split window navigation
-map("n", "<C-j>", "<C-w><C-j>", opts)
-map("n", "<C-k>", "<C-w><C-k>", opts)
-map("n", "<C-h>", "<C-w><C-h>", opts)
-map("n", "<C-l>", "<C-w><C-l>", opts)
-
--- Make splits the same size
-map("n", "<leader>=", "<C-w>=", opts)
-
--- Resizing split windows
-map("n", "<A-C-k>", "<C-w>5+", opts)
-map("n", "<M-C-j>", "<C-w>5-", opts)
-map("n", "<M-C-l>", "<C-w>5>", opts)
-map("n", "<M-C-h>", "<C-w>5<", opts)
+-- Navigating tabs
+map("n", "<C-l>", "<cmd>tabnext<CR>", opts)
+map("n", "<C-h>", "<cmd>tabprevious<CR>", opts)
 
 -- Line movement Mappings
 map("n", "<A-k>", "<cmd>move -2<CR>", opts)
