@@ -41,3 +41,6 @@ map("n", "gh", vim.lsp.buf.signature_help, opts)
 map("n", "<leader>d", vim.diagnostic.open_float, opts)
 map("n", "<leader>]", vim.diagnostic.goto_next, opts)
 map("n", "<leader>[", vim.diagnostic.goto_prev, opts)
+
+-- Nvim Tree
+map("n", "<C-p>", "<cmd>:NvimTreeToggle<CR>", opts)
