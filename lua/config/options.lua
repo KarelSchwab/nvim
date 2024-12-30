@@ -44,3 +44,12 @@ vim.opt.completeopt = "menuone,noinsert,noselect"
 vim.opt.mouse = "a"
 
 vim.g.netrw_banner = 0
+
+vim.opt.clipboard = "unnamedplus"
+vim.g.netrw_banner = 0
+
+-- Autocmd to fix underscore handling in LaTeX files
+vim.api.nvim_create_autocmd("BufEnter", {
+    pattern = { "*.tex" },
+    command = "syntax match texIgnoreUnderscore /_[^ ]*/ containedin=ALL ",
+})
