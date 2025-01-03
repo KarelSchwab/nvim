@@ -43,7 +43,6 @@ map("n", "gD", vim.lsp.buf.declaration, opts)
 map("n", "gi", vim.lsp.buf.implementation, opts)
 map("n", "gh", vim.lsp.buf.signature_help, opts)
 
-map("n", "<leader>d", vim.diagnostic.open_float, opts)
 map("n", "<leader>]", vim.diagnostic.goto_next, opts)
 map("n", "<leader>[", vim.diagnostic.goto_prev, opts)
 
