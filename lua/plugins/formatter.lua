@@ -49,9 +49,9 @@ return {
                     python = {
                         function()
                             return {
-                                exe = "python3 -m autopep8",
+                                exe = "black",
                                 args = {
-                                    "--in-place --aggressive --aggressive",
+                                    "--line-length 120 --target-version=py310",
                                     vim.fn.fnameescape(vim.api.nvim_buf_get_name(0))
                                 },
                                 stdin = false
