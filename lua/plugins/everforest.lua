@@ -4,6 +4,8 @@ return {
         local everforest = require("everforest")
         everforest.setup({
             background = "hard",
+            italics = true,
+            ui_contrast = "high",
         })
         everforest.load()
     end,
