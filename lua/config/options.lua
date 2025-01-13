@@ -45,7 +45,6 @@ vim.opt.mouse = "a"
 
 vim.g.netrw_banner = 0
 
-vim.opt.clipboard = "unnamedplus"
 vim.g.netrw_banner = 0
 
 -- Autocmd to fix underscore handling in LaTeX files
