@@ -31,8 +31,8 @@ map("n", "<A-j>", "<cmd>move +1<CR>", opts)
 
 map("n", "<C-A-h>", "<cmd>vertical resize -4<CR>", opts)
 map("n", "<C-A-l>", "<cmd>vertical resize +4<CR>", opts)
-map("n", "<C-A-k>", "<cmd>resize -4<CR>", opts)
-map("n", "<C-A-j>", "<cmd>resize +4<CR>", opts)
+map("n", "<C-A-j>", "<cmd>resize -4<CR>", opts)
+map("n", "<C-A-k>", "<cmd>resize +4<CR>", opts)
 
 -- LSP Mappings
 map("n", "K", vim.lsp.buf.hover, opts)
