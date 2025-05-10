@@ -52,3 +52,5 @@ vim.api.nvim_create_autocmd("BufEnter", {
     pattern = { "*.tex" },
     command = "syntax match texIgnoreUnderscore /_[^ ]*/ containedin=ALL ",
 })
+
+vim.opt.tags = { "./.tags;" }
