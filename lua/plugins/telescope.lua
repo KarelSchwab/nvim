@@ -26,7 +26,7 @@ return {
         -- Telescope Git Mappings
         map("n", "<leader>gf", builtin.git_files, opts)
         map("n", "<leader>gc", builtin.git_commits, opts)
-        map("n", "<leader>gb", builtin.git_bcommits, opts)
+        map("n", "<leader>gb", builtin.git_branches, opts)
         map("n", "<leader>gs", builtin.git_status, opts)
         map("n", "<leader>gr", builtin.git_bcommits_range, opts)
 
