@@ -1,5 +1,5 @@
 local map = vim.keymap.set
-local opts = {noremap = true, silent = true}
+local opts = { noremap = true, silent = true }
 
 -- Exit insert mode
 map("i", "jk", "<Esc>", opts)
@@ -39,24 +39,24 @@ map("n", "<leader>ca", vim.lsp.buf.code_action, opts)
 
 -- Custom function to do the same as vim.lsp.buf.definition but open the file in a new tab
 map("n", "gt", function()
-  local params = vim.lsp.util.make_position_params()
-  vim.lsp.buf_request(0, "textDocument/declaration", params, function(_, result, _, _)
-    if not result or vim.tbl_isempty(result) then
-      print("No declaration found")
-      return
-    end
+    local params = vim.lsp.util.make_position_params()
+    vim.lsp.buf_request(0, "textDocument/declaration", params, function(_, result, _, _)
+        if not result or vim.tbl_isempty(result) then
+            print("No declaration found")
+            return
+        end
 
-    local uri = result[1].uri
-    local range = result[1].range
+        local uri = result[1].uri
+        local range = result[1].range
 
-    -- Convert LSP range to Vim-friendly values
-    local line = range.start.line + 1
-    local col = range.start.character + 1
+        -- Convert LSP range to Vim-friendly values
+        local line = range.start.line + 1
+        local col = range.start.character + 1
 
-    -- Open the file in a new tab and navigate to the position
-    vim.cmd("tabnew " .. vim.uri_to_fname(uri))
-    vim.api.nvim_win_set_cursor(0, { line, col })
-  end)
+        -- Open the file in a new tab and navigate to the position
+        vim.cmd("tabnew " .. vim.uri_to_fname(uri))
+        vim.api.nvim_win_set_cursor(0, { line, col })
+    end)
 end, opts)
 
 -- Diagnostic Mappings
@@ -65,3 +65,5 @@ map("n", "<leader>[", vim.diagnostic.goto_prev, opts)
 
 -- Nvim Tree
 map("n", "<C-b>", "<cmd>:NvimTreeToggle<CR>", opts)
+
+map("n", "<leader>e", function() require("conform").format({ async = true, lsp_fallback = true }) end, opts)
