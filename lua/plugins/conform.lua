@@ -2,6 +2,7 @@ return {
     'stevearc/conform.nvim',
     opts = {
         formatters_by_ft = {
+            yaml = { "ansible-lint" },
             python = function(bufnr)
                 if require("conform").get_formatter_info("ruff_format", bufnr).available then
                     return { "ruff_format" }
