@@ -63,7 +63,7 @@ end, opts)
 map("n", "<leader>]", vim.diagnostic.goto_next, opts)
 map("n", "<leader>[", vim.diagnostic.goto_prev, opts)
 
--- Nvim Tree
-map("n", "<C-b>", "<cmd>:NvimTreeToggle<CR>", opts)
+-- Oil
+map("n", "-", "<CMD>Oil<CR>")
 
 map("n", "<leader>e", function() require("conform").format({ async = true, lsp_fallback = true }) end, opts)
