@@ -45,9 +45,9 @@ return {
                     offset_encoding = "utf-8"
                 },
                 sources = {
-                    {name = "nvim_lsp"},
-                    {name = "luasnip"},
-                    {name = "buffer"}
+                    { name = "nvim_lsp" },
+                    { name = "luasnip" },
+                    { name = "buffer" }
                 },
                 mapping = cmp.mapping.preset.insert(
                     {
@@ -55,11 +55,11 @@ return {
                         ["<C-f>"] = cmp.mapping.scroll_docs(4),
                         ["<C-Space>"] = cmp.mapping.complete(),
                         ["<C-e>"] = cmp.mapping.abort(),
-                        ["<CR>"] = cmp.mapping.confirm({select = true})
+                        ["<CR>"] = cmp.mapping.confirm({ select = true })
                     }
                 ),
                 formatting = {
-                    fields = {"abbr", "kind", "menu"}
+                    fields = { "abbr", "kind", "menu" }
                 }
             }
         )
@@ -70,7 +70,7 @@ return {
             {
                 mapping = cmp.mapping.preset.cmdline(),
                 sources = {
-                    {name = "buffer"}
+                    { name = "buffer" }
                 }
             }
         )
@@ -82,14 +82,13 @@ return {
                 mapping = cmp.mapping.preset.cmdline(),
                 sources = cmp.config.sources(
                     {
-                        {name = "path"},
-                        {name = "cmdline"}
+                        { name = "path" },
+                        { name = "cmdline" }
                     }
                 )
             }
         )
 
-        require("luasnip.loaders.from_vscode").load()
+        require("luasnip.loaders.from_vscode").lazy_load()
     end,
 }
-
