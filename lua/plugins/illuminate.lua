@@ -1,6 +1,6 @@
 return {
     "RRethy/vim-illuminate",
-    config = function ()
+    config = function()
         require("illuminate").configure({
             providers = {
                 'lsp',
