@@ -15,6 +15,13 @@ return {
             black = {
                 prepend_args = { "--line-length", "120", "--target-version", "py310" },
             },
+            ruff_format = {
+                prepend_args = { "--line-length", "120" },
+            },
+            ansible_lint = {
+                prepend_args = { "--profile", "production" },
+                args = { "--format", "full" },
+            },
         },
         default_format_opts = {
             lsp_format = "fallback",
