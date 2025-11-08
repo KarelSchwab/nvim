@@ -10,6 +10,6 @@ return {
             diagnostic_line_highlight = true,
             inlay_hints_background = "dimmed",
         })
-        everforest.load()
+        -- everforest.load()
     end,
 }
