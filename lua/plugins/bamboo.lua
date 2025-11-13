@@ -1,8 +1,9 @@
 return {
-    "projekt0n/github-nvim-theme",
+    "ribru17/bamboo.nvim",
     lazy = false,
     priority = 1000,
     config = function()
-        -- vim.cmd.colorscheme("github_dark")
+        require("bamboo").load()
     end
 }
+
