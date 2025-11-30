@@ -1,15 +1,19 @@
 return {
     "nvim-telescope/telescope.nvim",
     dependencies = { "nvim-lua/plenary.nvim" },
-    extensions = {
-        fzf = {
-            fuzzy = true,
-            override_generic_sorter = true,
-            override_file_sorter = true,
-            case_mode = "smart_case",
-        }
-    },
-    config = function() 
+    config = function()
+        local telescope = require("telescope")
+        telescope.setup({
+            extensions = {
+                fzf = {
+                    fuzzy = true,
+                    override_generic_sorter = true,
+                    override_file_sorter = true,
+                    case_mode = "smart_case",
+                }
+            },
+        })
+
         local builtin = require("telescope.builtin")
         local opts = { noremap = true, silent = true }
         local map = vim.keymap.set
