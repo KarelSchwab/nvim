@@ -12,6 +12,7 @@ return {
                     case_mode = "smart_case",
                 }
             },
+            sorting_strategy = "ascending",
         })
 
         local builtin = require("telescope.builtin")
@@ -39,6 +40,4 @@ return {
 
         require('telescope').load_extension('fzf')
     end,
-    sorting_strategy = "ascending",
-    windblend = 10,
 }
