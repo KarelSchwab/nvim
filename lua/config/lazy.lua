@@ -19,5 +19,5 @@ require("lazy").setup({
         { import = "plugins" },
     },
     install = { colorscheme = { "gruvbox-material" } },
-    checker = { enabled = false },
+    checker = { enabled = true },
 })

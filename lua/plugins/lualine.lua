@@ -4,6 +4,11 @@ return {
     opts = {
         options = {
             theme = "gruvbox-material",
-        }
+        },
+        sections = {
+            lualine_c = {
+                { "filename", path = 1 },
+            },
+        },
     }
 }
