@@ -26,6 +26,3 @@ map("n", "<C-l>", "<cmd>tabnext<CR>", opts)
 map("n", "<C-h>", "<cmd>tabprevious<CR>", opts)
 map("n", "<C-A-h>", "<cmd>tabmove -<CR>", opts)
 map("n", "<C-A-l>", "<cmd>tabmove +<CR>", opts)
-
-
-map("n", "<leader>e", function() require("conform").format({ async = true, lsp_fallback = true }) end, opts)

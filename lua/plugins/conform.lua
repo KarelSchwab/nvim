@@ -1,24 +1,20 @@
 return {
     'stevearc/conform.nvim',
-    opts = {
-        formatters_by_ft = {
-            python = function(bufnr)
-                if require("conform").get_formatter_info("ruff_format", bufnr).available then
-                    return { "ruff_format" }
-                else
-                    return { "black" }
-                end
-            end,
-            html = { "prettier" },
-        },
-        formatters = {
-            black = {
-                prepend_args = { "--line-length", "120", "--target-version", "py310" },
-            },
-        },
-        default_format_opts = {
-            lsp_format = "fallback",
-        },
-        notify_on_error = true,
-    },
+    config = function()
+        local conform = require("conform")
+        conform.setup({
+            formatters_by_ft = {
+                lua = { "stylua" },
+                go = { "gofmt" },
+                python = { "black", "ruff_format", stop_after_first = true },
+                javascript = { "prettierd", "prettier", stop_after_first = true },
+                typescript = { "prettierd", "prettier", stop_after_first = true },
+                html = { "prettierd", "prettier", stop_after_first = true },
+                css = { "prettierd", "prettier", stop_after_first = true },
+                json = { "prettierd", "prettier", stop_after_first = true },
+            }
+        })
+
+        vim.keymap.set("n", "<leader>e", function() require("conform").format({ async = true, lsp_fallback = true }) end)
+    end
 }
