@@ -9,6 +9,7 @@ return {
                     return { "black" }
                 end
             end,
+            html = { "prettier" },
         },
         formatters = {
             black = {

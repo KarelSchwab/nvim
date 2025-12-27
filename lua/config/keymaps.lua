@@ -18,91 +18,14 @@ map("v", "<leader>p", '"+p', opts)
 map("v", "<leader>P", '"+P', opts)
 
 -- Navigating quickfix list
-map("n", "<A-j>", "<cmd>cnext<CR>", opts)
-map("n", "<A-k>", "<cmd>cprev<CR>", opts)
+map("n", "<C-j>", "<cmd>cnext<CR>", opts)
+map("n", "<C-k>", "<cmd>cprev<CR>", opts)
 
 -- Navigating tabs
 map("n", "<C-l>", "<cmd>tabnext<CR>", opts)
 map("n", "<C-h>", "<cmd>tabprevious<CR>", opts)
-map("n", "<A-h>", "<cmd>tabmove -<CR>", opts)
-map("n", "<A-l>", "<cmd>tabmove +<CR>", opts)
+map("n", "<C-A-h>", "<cmd>tabmove -<CR>", opts)
+map("n", "<C-A-l>", "<cmd>tabmove +<CR>", opts)
 
-map("n", "<C-A-h>", "<cmd>vertical resize -4<CR>", opts)
-map("n", "<C-A-l>", "<cmd>vertical resize +4<CR>", opts)
-map("n", "<C-A-j>", "<cmd>resize -4<CR>", opts)
-map("n", "<C-A-k>", "<cmd>resize +4<CR>", opts)
-
--- LSP Mappings
-map("n", "K", vim.lsp.buf.hover, opts)
-map("n", "<leader>rn", vim.lsp.buf.rename, opts)
-map("n", "<leader>ca", vim.lsp.buf.code_action, opts)
-
--- Custom function to do the same as vim.lsp.buf.definition but open the file in a new tab
-map("n", "gt", function()
-    local params = vim.lsp.util.make_position_params()
-    vim.lsp.buf_request(0, "textDocument/declaration", params, function(_, result, _, _)
-        if not result or vim.tbl_isempty(result) then
-            print("No declaration found")
-            return
-        end
-
-        local uri = result[1].uri
-        local range = result[1].range
-
-        -- Convert LSP range to Vim-friendly values
-        local line = range.start.line + 1
-        local col = range.start.character + 1
-
-        -- Open the file in a new tab and navigate to the position
-        vim.cmd("tabnew " .. vim.uri_to_fname(uri))
-        vim.api.nvim_win_set_cursor(0, { line, col })
-    end)
-end, opts)
-
-map("n", "gv", function()
-    local params = vim.lsp.util.make_position_params()
-    vim.lsp.buf_request(0, "textDocument/declaration", params, function(_, result, _, _)
-        if not result or vim.tbl_isempty(result) then
-            print("No declaration found")
-            return
-        end
-
-        local uri = result[1].uri
-        local range = result[1].range
-
-        -- Convert LSP range to Vim-friendly values
-        local line = range.start.line + 1
-        local col = range.start.character + 1
-
-        -- Open the file in a new tab and navigate to the position
-        vim.cmd("vsplit " .. vim.uri_to_fname(uri))
-        vim.api.nvim_win_set_cursor(0, { line, col })
-    end)
-end, opts)
-
-map("n", "gs", function()
-    local params = vim.lsp.util.make_position_params()
-    vim.lsp.buf_request(0, "textDocument/declaration", params, function(_, result, _, _)
-        if not result or vim.tbl_isempty(result) then
-            print("No declaration found")
-            return
-        end
-
-        local uri = result[1].uri
-        local range = result[1].range
-
-        -- Convert LSP range to Vim-friendly values
-        local line = range.start.line + 1
-        local col = range.start.character + 1
-
-        -- Open the file in a new tab and navigate to the position
-        vim.cmd("split " .. vim.uri_to_fname(uri))
-        vim.api.nvim_win_set_cursor(0, { line, col })
-    end)
-end, opts)
-
--- Diagnostic Mappings
-map("n", "<leader>]", vim.diagnostic.goto_next, opts)
-map("n", "<leader>[", vim.diagnostic.goto_prev, opts)
 
 map("n", "<leader>e", function() require("conform").format({ async = true, lsp_fallback = true }) end, opts)
