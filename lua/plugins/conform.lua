@@ -15,7 +15,6 @@ return {
             },
             formatters = {
                 black = { prepend_args = { "--line-length", "120" } },
-                ruff_format = { prepend_args = { "--line-length", "120" } },
             },
         })
 
