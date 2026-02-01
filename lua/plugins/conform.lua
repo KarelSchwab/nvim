@@ -12,7 +12,11 @@ return {
                 html = { "prettierd", "prettier", stop_after_first = true },
                 css = { "prettierd", "prettier", stop_after_first = true },
                 json = { "prettierd", "prettier", stop_after_first = true },
-            }
+            },
+            formatters = {
+                black = { prepend_args = { "--line-length", "120" } },
+                ruff_format = { prepend_args = { "--line-length", "120" } },
+            },
         })
 
         vim.keymap.set("n", "<leader>e", function() require("conform").format({ async = true, lsp_fallback = true }) end)
