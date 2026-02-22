@@ -3,7 +3,8 @@ return {
     dependencies = { "nvim-tree/nvim-web-devicons" },
     opts = {
         options = {
-            theme = "gruvbox-material",
+            -- theme = "gruvbox-material",
+            theme = "everforest",
         },
         sections = {
             lualine_c = {
